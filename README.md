@@ -13,7 +13,7 @@ We are working on Java Spring program for our University Group Project
 
 - [@lukesngr](https://github.com/lukesngr)
 - [@29ayx](https://github.com/29ayx)
-- [@29ayx](https://github.com/29ayx)
+- [@KatsuyaSaito0](https://github.com/KatsuyaSaito0)
 
 
 
