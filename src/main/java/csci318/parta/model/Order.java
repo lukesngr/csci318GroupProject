@@ -10,9 +10,8 @@ public class Order {
     @Id
     @GeneratedValue
     private long id;
-    private String supplier;
-    private String product;
-    private String quantity;
+    String supplier, product;
+    Integer quantity;
 
     public Order() {
     }
@@ -37,15 +36,15 @@ public class Order {
         return product;
     }
 
-    public void product(String product) {
+    public void setProduct(String product) {
         this.product = product;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
