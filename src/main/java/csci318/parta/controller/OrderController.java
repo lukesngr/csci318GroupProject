@@ -2,10 +2,15 @@ package csci318.parta.controller;
 
 import java.util.List;
 
-import org.example.model.Order;
-import org.example.repository.OrderRepository;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import csci318.parta.model.Order;
+import csci318.parta.repository.OrderRepository;
 
 @RestController
 public class OrderController {
@@ -36,10 +41,10 @@ public class OrderController {
 
     //put order by id
     @PutMapping("/order/{id}")
-    Order updateOrderName(@PathVariable Long id, @RequestBody Order order) {
+    Order updateOrderProduct(@PathVariable Long id, @RequestBody Order order) {
         Order order1 = orderRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
-        order1.setName(order.getName());
+        order1.setProduct(order.getProduct());
         return orderRepository.save(order1);
     }
 
