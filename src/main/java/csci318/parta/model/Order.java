@@ -10,14 +10,8 @@ public class Order {
     @Id
     @GeneratedValue
     private long id;
-
-    @Column(nullable = false)
     private String supplier;
-
-    @Column(nullable = false)
     private String product;
-
-    @Column(nullable = false)
     private String quantity;
 
     public Order() {
