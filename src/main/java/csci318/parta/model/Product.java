@@ -1,19 +1,24 @@
-package csci318.demo;
+package csci318.parta.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public
+import javax.persistence.*;
+
 @Entity
-class Product {
+public class Product {
 
     @Id
     @GeneratedValue
     private long id;
-    private String productCatogry;
-    private String name;
-    private double price;
+    String productCategory, name;
+    double price;
+
+    @OneToOne(cascade=CascadeType.PERSIST)
+    @JoinColumn(name = "details_id")
+    @JsonIgnore
+    // Hide the address field in a library.
+    // This prevents an infinite nesting references of library and address.
+    private ProductDetail detail;
 
 
     public long getId() {
@@ -24,12 +29,12 @@ class Product {
         this.id = id;
     }
 
-    public String getProductCatogry() {
-        return productCatogry;
+    public String getProductCategory() {
+        return productCategory;
     }
 
-    public void setProductCatogry(String productCatogry) {
-        this.productCatogry = productCatogry;
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
     }
 
     public String getName() {
@@ -47,26 +52,12 @@ class Product {
     public void setPrice(double price) {
         this.price = price;
     }
-}
 
-class ProductDetail {
-
-    private String description;
-    private String comment;
-
-    public String getDescription() {
-        return description;
+    public ProductDetail getDetail() {
+        return detail;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDetail(ProductDetail detail) {
+        this.detail = detail;
     }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-}
+};
