@@ -28,11 +28,6 @@ public class ProductController {
                 .orElseThrow(RuntimeException::new);
     }
 
-//    @GetMapping("/product/{id}/detail")
-//    Product findProdDetailById(@PathVariable Long id) {
-//        return xrepository.findById(id)
-//                .orElseThrow(RuntimeException::new);
-//    }
 
     @PostMapping("/product")
     Product createProd(@RequestBody Product newProd) {
@@ -45,6 +40,8 @@ public class ProductController {
         Product product1 = xrepository.findById(id)
                 .orElseThrow(RuntimeException::new);
         product1.setName(product.getName());
+        product1.setProductCategory(product.getProductCategory());
+        product1.setPrice(product.getPrice());
         return xrepository.save(product1);
     }
 

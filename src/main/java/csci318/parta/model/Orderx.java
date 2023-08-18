@@ -3,23 +3,13 @@ package csci318.parta.model;
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orderx {
 
     @Id
     @GeneratedValue
     private long id;
-
-    @Column(nullable = false)
-    private String supplier;
-
-    @Column(nullable = false)
-    private String product;
-
-    @Column(nullable = false)
-    private String quantity;
-
-    public Order() {
-    }
+    String supplier, product;
+    Integer quantity;
 
     public long getId() {
         return id;
@@ -41,16 +31,15 @@ public class Order {
         return product;
     }
 
-    public void product(String product) {
+    public void setProduct(String product) {
         this.product = product;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
 }
