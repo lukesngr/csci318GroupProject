@@ -5,16 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Order {
+public class Orderx {
 
     @Id
     @GeneratedValue
     private long id;
     String supplier, product;
     Integer quantity;
-
-    public Order() {
-    }
 
     public long getId() {
         return id;
@@ -44,8 +41,7 @@ public class Order {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
 }
