@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+      <h1 class="title">Group work going fine?</h1>
+      <button onclick="cool()">Yes</button>
+      <button onclick="dumb()">NO</button>
+
+     
+        <img hidden id="img1" src="https://www.winnipegfreepress.com/wp-content/uploads/sites/2/2022/04/6490667.jpg?w=1000" alt="" height="200px">
+        <img hidden id="img2" src="https://media.tenor.com/OQu20Puq8SYAAAAi/cool-cool-emoji.gif" alt="" height="200px">
+
+      <script>
+
+
+        function cool(){
+
+            document.getElementById("img2").hidden = false;
+            document.getElementById("img1").hidden = true;
+
+        }
+
+        function dumb(){
+
+            document.getElementById("img1").hidden = false;
+            document.getElementById("img2").hidden = true;
+
+        }
+
+      </script>
+  </body>
+</html>
